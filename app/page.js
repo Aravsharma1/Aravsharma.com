@@ -2,22 +2,25 @@ import SiteHeader from "@/components/SiteHeader";
 
 const experiences = [
   {
-    term: "Co-op Term 1",
-    period: "Year",
-    role: "Software Developer Intern",
-    company: "Company / Organization Name",
-    summary:
-      "Summarize the product, tools, team, and one measurable contribution here. Keep it outcome-first and specific.",
-    stack: ["React", "APIs", "Testing"],
+    company: "Cerebras",
+    period: "Current",
+    logo: "/logos/cerebras.svg",
+    summary: "Working on software systems in the AI/ML infrastructure space.",
+    details: "Software Engineering / Internship / AI Infrastructure",
   },
   {
-    term: "Co-op Term 2",
-    period: "Year",
-    role: "Developer / Analyst Intern",
-    company: "Company / Organization Name",
-    summary:
-      "Use this slot for a second placement, technical project, research role, or professional experience that shows range.",
-    stack: ["Automation", "Data", "Systems"],
+    company: "Nokia",
+    period: "2025",
+    logo: "/logos/nokia.svg",
+    summary: "Built engineering experience across production software and infrastructure-oriented work.",
+    details: "Software Engineering / Internship",
+  },
+  {
+    company: "Ford",
+    period: "2024",
+    logo: "/logos/ford.svg",
+    summary: "Worked on practical software systems in a large engineering organization.",
+    details: "Software Engineering / Internship",
   },
 ];
 
@@ -40,9 +43,9 @@ const projects = [
 ];
 
 const notes = [
-  "Software development, systems thinking, and clean interfaces",
-  "Currently focused on practical full-stack engineering",
-  "Interested in developer tools, automation, and product-minded teams",
+  "Computer Science student at the University of Waterloo",
+  "Prior internship experiences at Nokia, Ford. Currently working at Cerebras.",
+  "Interested and exploring the AI/ML infrastructure space.",
 ];
 
 export default function Home() {
@@ -51,12 +54,6 @@ export default function Home() {
       <SiteHeader />
       <main className="page-shell">
         <section className="intro-section" id="home">
-          <h1>Hi, I'm Arav.</h1>
-          <p>Software developer focused on building useful products with clean, maintainable systems.</p>
-          <p>
-            I like practical engineering, thoughtful interfaces, and teams that care about shipping work
-            people can rely on.
-          </p>
           <ul className="plain-list" aria-label="Current focus">
             {notes.map((note) => (
               <li key={note}>{note}</li>
@@ -64,20 +61,23 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="content-section" id="work">
+        <section className="content-section" id="experience">
           <div className="section-title-row">
-            <h2>Work</h2>
+            <h2>Experience</h2>
             <a href="#contact">hiring?</a>
           </div>
-          <div className="simple-stack">
+          <div className="experience-list">
             {experiences.map((item) => (
-              <article className="list-item" key={item.term}>
-                <h3>{item.role}</h3>
-                <p>
-                  {item.company} / {item.term} / {item.period}
-                </p>
+              <article className="experience-item" key={item.company}>
+                <div className="company-logo" aria-hidden="true">
+                  <img src={item.logo} alt="" />
+                </div>
+                <div className="experience-topline">
+                  <h3>{item.company}</h3>
+                  <span>{item.period}</span>
+                </div>
                 <p>{item.summary}</p>
-                <p>{item.stack.join(" / ")}</p>
+                <p>{item.details}</p>
               </article>
             ))}
           </div>

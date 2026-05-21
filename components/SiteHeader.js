@@ -5,7 +5,7 @@ import { ArrowUpRight, Moon, Sun } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Work", href: "#work" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];

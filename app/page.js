@@ -31,24 +31,6 @@ const experiences = [
   },
 ];
 
-const projects = [
-  {
-    title: "Portfolio System",
-    description:
-      "A fast, responsive portfolio rebuilt with a modern component structure and a stronger editorial rhythm.",
-  },
-  {
-    title: "Project Placeholder",
-    description:
-      "Replace this with a course project, hackathon app, or shipped tool. Lead with the problem, your role, and the result.",
-  },
-  {
-    title: "Technical Case Study",
-    description:
-      "Use this space for a short case study that shows how you break down messy problems into maintainable systems.",
-  },
-];
-
 const notes = [
   "Computer Science student at the University of Waterloo",
   "Prior internship experiences at Nokia, Ford. Currently working at Cerebras.",
@@ -93,16 +75,8 @@ export default function Home() {
         <section className="content-section" id="projects">
           <div className="section-title-row">
             <h2>Projects</h2>
-            <a href="#contact">see more</a>
           </div>
-          <div className="link-list">
-            {projects.map((project) => (
-              <article className="list-item" key={project.title}>
-                <a href="#contact">{project.title}</a>
-                <p>{project.description}</p>
-              </article>
-            ))}
-          </div>
+          <p>In progress.</p>
         </section>
 
         <section className="content-section" id="contact">

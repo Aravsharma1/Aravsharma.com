@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -18,7 +18,7 @@ const applyTheme = (nextTheme) => {
 export default function SiteHeader() {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const sections = navItems
@@ -49,10 +49,7 @@ export default function SiteHeader() {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("portfolio-theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
-    const initialTheme = savedTheme || preferredTheme;
+    const initialTheme = savedTheme || "light";
 
     setTheme(initialTheme);
     applyTheme(initialTheme);
@@ -101,10 +98,6 @@ export default function SiteHeader() {
           </span>
         </button>
 
-        <a className="header-cta" href="mailto:your.email@example.com">
-          Contact
-          <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
-        </a>
       </div>
     </header>
   );

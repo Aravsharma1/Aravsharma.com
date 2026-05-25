@@ -4,23 +4,30 @@ const experiences = [
   {
     company: "Cerebras",
     period: "Current",
-    logo: "/logos/cerebras.svg",
-    summary: "Working on software systems in the AI/ML infrastructure space.",
-    details: "Software Engineering / Internship / AI Infrastructure",
+    href: "https://www.cerebras.ai/",
+    summary: "Building infrastructure for running training and inference workloads on Cerebras chips.",
+    details: "Software Engineer / Internship",
+  },
+  {
+    company: "Virtual Valet Systems",
+    period: "2025",
+    href: "https://www.vvsparking.com/",
+    summary: "Engineered AI-powered backend infrastructure for parking management, spanning chatbot automation, semantic retrieval, and scalable AWS APIs.",
+    details: "Software Engineer / Internship",
   },
   {
     company: "Nokia",
     period: "2025",
-    logo: "/logos/nokia.svg",
-    summary: "Built engineering experience across production software and infrastructure-oriented work.",
-    details: "Software Engineering / Internship",
+    href: "https://www.nokia.com/",
+    summary: "Built infrastructure to automate configuration, deployment, and management of 5G network applications. Developed agents to autonomously resolve 5G network issues.",
+    details: "Software Engineer / Internship",
   },
   {
     company: "Ford",
     period: "2024",
-    logo: "/logos/ford.svg",
-    summary: "Worked on practical software systems in a large engineering organization.",
-    details: "Software Engineering / Internship",
+    href: "https://www.ford.ca/",
+    summary: "Made a test automation SDK to improve validation and reliability of Ford's web platforms.",
+    details: "Test Automation Engineer / Internship",
   },
 ];
 
@@ -64,16 +71,16 @@ export default function Home() {
         <section className="content-section" id="experience">
           <div className="section-title-row">
             <h2>Experience</h2>
-            <a href="#contact">hiring?</a>
           </div>
           <div className="experience-list">
             {experiences.map((item) => (
               <article className="experience-item" key={item.company}>
-                <div className="company-logo" aria-hidden="true">
-                  <img src={item.logo} alt="" />
-                </div>
                 <div className="experience-topline">
-                  <h3>{item.company}</h3>
+                  <h3>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.company}
+                    </a>
+                  </h3>
                   <span>{item.period}</span>
                 </div>
                 <p>{item.summary}</p>
@@ -105,18 +112,13 @@ export default function Home() {
               <a href="mailto:your.email@example.com">email</a>
             </li>
             <li>
-              <a href="#" aria-label="GitHub profile">
+              <a href="https://github.com/Aravsharma1" aria-label="GitHub profile">
                 github
               </a>
             </li>
             <li>
-              <a href="#" aria-label="LinkedIn profile">
+              <a href="https://www.linkedin.com/in/arav-sharma/" aria-label="LinkedIn profile">
                 linkedin
-              </a>
-            </li>
-            <li>
-              <a href="#" aria-label="Resume">
-                resume
               </a>
             </li>
           </ul>
